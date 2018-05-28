@@ -225,6 +225,8 @@ function duplicate(arr){
 
 ### 32. 请解释Promise
 
+promise代表将来某个要发生的事件。
+
 ### 33.ES6 新特性
 
 ### 34. 箭头函数作用域
