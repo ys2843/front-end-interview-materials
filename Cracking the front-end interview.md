@@ -43,21 +43,157 @@
 
 + Data structures:
 
-  + Unit test: try Mocha
-  + Linked lists
-  + Hashtables
-  + Stacks and queues
-  + Trees(binary trees and heaps)
-  + Graphs (Know how to do BFS and DFS)
+  - [ ] Unit test: try Mocha
+
+  - [x] Linked lists (Singly)
+
+  - ```javascript
+    function Node (element) {
+      this.element = element;
+      this.next = null;
+    }
+    function LinkedList () {
+      this.head = new Node('head');
+      this.find = find;
+      this.insert = insert;
+      this.display = display;
+      this.findPre = findPre;
+      this.remove = remove;
+      function find (value) {
+        var curNode = this.head;
+        while (curNode && curNode.element != value) {
+          curNode = curNode.next;
+        }
+        return curNode;
+      }
+      function insert (newValue, nodeValue) {
+        var curNode = this.find(nodeValue);
+        if (!curNode) {
+          console.log('No such node!');
+          return;
+        }
+        var newNode = new Node(newValue);
+        newNode.next = curNode.next;
+        curNode.next = newNode;
+      }
+      function findPre (nodeValue) {
+        var curNode = this.head;
+        while (curNode.next && curNode.next.element !== nodeValue) {
+          curNode = curNode.next;
+        }
+        return curNode;
+      }
+      function remove (nodeValue) {
+        var curNode = this.find(nodeValue);
+        if (!curNode) {
+          console.log('No such node!');
+          return;
+        }
+        if (curNode.element === this.head.element) {
+          this.head = this.head.next;
+          return;
+        }
+        var preNode = this.findPre(nodeValue);
+        preNode.next = curNode.next;
+      }
+      function display () {
+        var curNode = this.head;
+        while (curNode) {
+          console.log(curNode.element);
+          curNode = curNode.next;
+        }
+      }
+    }
+    ```
+
+  - [ ] Hashtables
+
+  - [ ] Queues
+
+    ```javascript
+    function Queue () {
+      this.store = [];
+      this.enqueue = enqueue;
+      this.dequeue = dequeue;
+      this.empty = empty;
+      this.front = front;
+      this.back = back;
+      this.toString = toString;
+      function enqueue (ele) {
+        this.store.push(ele);
+      }
+      function dequeue () {
+        if (this.empty()) {
+          return 'this queue is empty';
+        }
+        return this.store.shift();
+      }
+      function empty () {
+        return this.store.length === 0;
+      }
+      function front () {
+        if (this.empty) {
+          return 'this queue is empty';
+        }
+        return this.store[0];
+      }
+      function back () {
+        if (this.empty) {
+          return 'this queue is empty';
+        }
+        return this.store[this.store.length - 1];
+      }
+      function toString () {
+        return this.store.join();
+      }
+      function clear () {
+        delete this.store;
+        this.store = [];
+      }
+    }
+    ```
+
+  - [x] Stacks
+
+    ```javascript
+    function Stack () {
+      this.store = [];
+      this.top = 0;
+      this.push = push;
+      this.pop = pop;
+      this.peek = peek;
+      this.length = this.top;
+      this.clear = clear;
+      function push (ele) {
+        this.store[this.top++] = ele;
+      }
+      function pop () {
+        if (this.top === 0) {console.log('empty stack'); return;}
+        return this.store[this.top--];
+      }
+      function peek () {
+        return this.store[this.top-1];
+      }
+      function clear () {
+        delete this.store;
+        this.store = [];
+        this.top = 0;
+      }
+    }
+    ```
+
+  - [ ] Trees(binary trees and heaps)
+
+  - [ ] Graphs (Know how to do BFS and DFS)
 
 + Sorting (Make note of their time and space complexity)
 
-  + Binary search
+  - [ ] Binary search
 
-  + Bubble sort 
+  - [x] Bubble sort 
 
     + Time complexity: O(n^2)
-    + In place 
+    + In place: O(1) 
     + Stable
 
     ```javascript
@@ -75,10 +211,10 @@
     }
     ```
 
-  + Insertion sort
+  - [x] Insertion sort
 
     + Time complexity: O(n^2)
-    + In place
+    + In place: O(1)
     + Stable
 
     ```javascript
@@ -96,10 +232,10 @@
     }
     ```
 
-  + Selection sort
+  - [x] Selection sort
 
     - Time Complexity: O(n^2)
-    - In place
+    - In place: O(1)
     - Unstable
 
     ```javascript
@@ -121,9 +257,11 @@
     }
     ```
 
-  + Merge sort
+  - [x] Merge sort
 
     + Time complexity: O(nlogn)
+    + Out places: O(n)
+    + Stable
 
     ```javascript
     var mergeSort = function (arr) {
@@ -152,5 +290,31 @@
 
     
 
-  + Quick sort
+  - [x] Quick sort
+
+    + Time complexity: O(nlogn)
+    + Out place: O(logn)
+    + Unstable
+
+    ```javascript
+    var quickSort = function (arr) {
+      if (arr.length <= 1) {
+        return arr;
+      }
+      var pivotIndex = Math.floor(arr.length / 2);
+      var pivot = arr.splice(pivotIndex, 1)[0];
+      var left = [];
+      var right = [];
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i] < pivot) {
+          left.push(arr[i]);
+        } else {
+          right.push(arr[i]);
+        }
+      }
+      return quickSort(left).concat(pivot, quickSort(right));
+    }
+    ```
+
+  - [ ] Heap sort
 
