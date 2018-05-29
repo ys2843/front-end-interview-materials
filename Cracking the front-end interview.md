@@ -18,15 +18,51 @@
 ### Javascript Concepts
 
 + Prototypal inheritance
+
+  > The core idea of Prototypal Inheritance is that an object can point to another object and inherit all its properties. The main purpose is to allow multiple instances of an object to share common properties, hence, the Singleton Pattern.
+
+  ```javascript
+  function Person (name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  Person.prototype.greeting = function () {
+    console.log('Hello, I am ' + this.name)
+  }
+  
+  var peter = new Person('Peter', 15);
+  peter.greeting();
+  
+  function Teacher (name, age, title) {
+    Person.call(this, name, age);
+    this.title = title;
+  }
+  
+  Teacher.prototype = Object.create(Person.prototype);
+  Teacher.prototype.constructor = Teacher;
+  
+  var jack = new Teacher('jack', 23, 'ENG')
+  jack.greeting();
+  ```
+
 + Scoping
+
 + Closures
+
 + Event loop
+
 + Event bubbling
+
 + Apply, call and bind
+
 + Callbacks and promises
+
 + Variable and functoin hoisting
+
 + Currying
+
 + ES6 features
+
 + Different way of iterating
 
 ### Design Patterns
@@ -106,7 +142,7 @@
     }
     ```
 
-  - [ ] Hashtables
+  - [x] Hashtables
 
   - ```javascript
     function HashTable(obj)
@@ -529,5 +565,58 @@
     }
     ```
 
-  - [ ] Heap sort
+  - [x] Heap sort
+
+    + Time complexity: O(nlogn)
+    + In place: O(1)
+    + Unstable
+
+    ```javascript
+    var len; 
+    
+    function buildMaxHeap(arr) {
+        len = arr.length;
+        for (var i = Math.floor(len/2); i >= 0; i--) {
+            heapify(arr, i);
+        }
+    }
+    
+    function heapify(arr, i) {
+        var left = 2 * i + 1,
+            right = 2 * i + 2,
+            largest = i;
+    
+        if (left < len && arr[left] > arr[largest]) {
+            largest = left;
+        }
+    
+        if (right < len && arr[right] > arr[largest]) {
+            largest = right;
+        }
+    
+        if (largest != i) {
+            swap(arr, i, largest);
+            heapify(arr, largest);
+        }
+    }
+    
+    function swap(arr, i, j) {
+        var temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+    
+    function heapSort(arr) {
+        buildMaxHeap(arr);
+    
+        for (var i = arr.length-1; i > 0; i--) {
+            swap(arr, 0, i);
+            len--;
+            heapify(arr, 0);
+        }
+        return arr;
+    }
+    ```
+
+    
 
