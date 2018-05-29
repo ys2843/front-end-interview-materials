@@ -43,7 +43,7 @@
 
 + Data structures:
 
-  - [ ] Unit test: try Mocha
+  - [ ] Unit test: Mocha
 
   - [x] Linked lists (Singly)
 
@@ -194,7 +194,7 @@
           
     ```
 
-  - [ ] Queues
+  - [x] Queues
 
     ```javascript
     function Queue () {
@@ -268,7 +268,7 @@
     }
     ```
 
-  - [ ] Trees(binary trees and heaps)
+  - [x] Trees(binary trees and heaps)
 
   - ```javascript
     function Node (val) {
