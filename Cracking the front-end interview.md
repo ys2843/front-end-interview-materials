@@ -194,8 +194,6 @@
           
     ```
 
-  - 
-
   - [ ] Queues
 
     ```javascript
@@ -271,6 +269,133 @@
     ```
 
   - [ ] Trees(binary trees and heaps)
+
+  - ```javascript
+    function Node (val) {
+      this.val = val;
+      this.left = null;
+      this.right = null;
+    }
+    
+    function BST () {
+      this.root = null;
+      this.insert = insert;
+      this.inOrder = inOrder;
+      this.preOrder = preOrder;
+      this.postOrder = postOrder;
+      this.getMin = getMin;
+      this.getMax = getMax;
+      this.find = find;
+      this.remove = remove;
+      function insert (val) {
+        var node = new Node(val);
+        if (!this.root) {
+          this.root = node;
+        } else {
+          var parentNode = this.root;
+          while (true) {
+            if (parentNode.val < val) {
+                if (parentNode.right) {
+                  parentNode = parentNode.right;
+                } else {
+                  parentNode.right = node;
+                  break;
+                }
+            } else {
+              if (parentNode.left) {
+                parentNode = parentNode.left;
+              } else {
+                parentNode.left = node;
+                break;
+              }
+            }
+          }
+        }
+      }
+      function inOrder (root) {
+        if (!root) {
+          return;
+        }
+        inOrder(root.left);
+        console.log(root.val);
+        inOrder(root.right);
+      }
+      function preOrder (root) {
+        if (!root) {
+          return;
+        }
+        console.log(root.val);
+        preOrder(root.left);
+        preOrder(root.right);
+      }
+      function postOrder (root) {
+        if (!root) {
+          return;
+        }
+        postOrder(root.left);
+        postOrder(root.right);
+        console.log(root.val);
+      }
+      function getMin() {
+        var cur = this.root;
+        while (cur.left) {
+          cur = cur.left;
+        }
+        return cur.val;
+      }
+      function getMax () {
+        var cur = this.root;
+        while (cur.right) {
+          cur = cur.right;
+        }
+        return cur.val;
+      }
+      function find (val) {
+        var cur = this.root;
+        while (cur && cur.val !== val) {
+          if (cur.val > val) {
+            cur = cur.left;
+          } else {
+            cur = cur.right;
+          }
+        }
+        return cur;
+      }
+      function getSmallest (node) {
+        if (!node.left) {
+          return node;
+        }
+        return getSmallest(node.left);
+      }
+      function removeNode (node, val) {
+        if (!node) {
+          return null;
+        }
+        if (node.val === val) {
+          if (!node.left && !node.right) {
+            return null;
+          } else if (!node.left) {
+            return node.right;
+          } else if (!node.right) {
+            return node.left;
+          } else {
+            var tmp = getSmallest(node.right);
+            node.val = tmp.val;
+            node.right = removeNode(node.right, tmp.val);
+            return node;
+          }
+        } else if (node.val < val) {
+          node.right = removeNode(node.right, val);
+        } else {
+          node.left = removeNode(node.left, val);
+        }
+        return node;
+      }
+      function remove (val) {
+        this.root = removeNode(this.root, val);
+      }
+    }
+    ```
 
   - [ ] Graphs (Know how to do BFS and DFS)
 
