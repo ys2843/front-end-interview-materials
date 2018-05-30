@@ -47,22 +47,24 @@
 
 + Scoping
 
+  > In JavaScript, scope refers to the current context of your code. Scopes can be *globally* or *locally* defined. 
+
+  [Everything you wanted to know about JavaScript scop](https://toddmotto.com/everything-you-wanted-to-know-about-javascript-scope/#what-is-scope)
+
 + Closures
+
+  > Closures ties in very closely with Lexical Scope. A better example of how the *closure* side of things works, can be seen when returning a *function reference* - a more practical usage. Inside our scope, we can return things so that they’re available in the parent scope
 
 + Event loop
 
+
+
 + Event bubbling
-
 + Apply, call and bind
-
 + Callbacks and promises
-
 + Variable and functoin hoisting
-
 + Currying
-
 + ES6 features
-
 + Different way of iterating
 
 ### Design Patterns
