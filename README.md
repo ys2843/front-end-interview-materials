@@ -26,10 +26,64 @@
 
 + Basic concepts:
   + CSS animations
+
   + CSS sprites
-  + Pseudo classes
+
+    > An image sprite is a collection of images put into a single image.
+    >
+    > A web page with many images can take a long time to load and generates multiple server requests.
+    >
+    > Using image sprites will reduce the number of server requests and save bandwidth.
+
+    #### Example
+
+    ```css
+    #home {
+        width: 46px;
+        height: 44px;
+        background: url(img_navsprites.gif) 0 0;
+    }
+    
+    #next {
+        width: 43px;
+        height: 44px;
+        background: url(img_navsprites.gif) -91px 0;
+    }
+    ```
+
+  + Pseudo classes & pseudo element
+
+    + Pseudo classes
+
+      > A keyword added to a selector that specifies **a special state** of the selected element(s).
+
+      | Specification   | Comments                                                     |
+      | --------------- | ------------------------------------------------------------ |
+      | HTML5           | `:link`, `:visited`, `:active`, `:enabled`, `:disabled`, `:checked`, and `:indeterminate`. Defined `:default`, `:valid`, `:invalid`, `:in-range`, `:out-of-range`, `:required`, `:optional`, `:read-only`, `:read-write`, and `:dir()` |
+      | CSS 3           | `:default`, `:valid`, `:invalid`, `:in-range`, `:out-of-range`, `:required`, `:optional`, `:read-only`, and `:read-write` |
+      | Selector level3 | `:target`, `:root`, `:nth-child()`, `:nth-last-of-child()`, `:nth-of-type()`, `:nth-last-of-type()`, `:last-child`, `:first-of-type`, `:last-of-type`, `:only-child`, `:only-of-type`, `:empty`, and `:not()` |
+      | CSS 2           | `:lang()`, `:first-child`, `:hover`, and `:focus`            |
+      | CSS 1           | `:link`, `:visited`, and `:active`                           |
+
+    + Pseudo elements
+
+      > A keyword added to a selector that lets you style **a specific part** of the selected element(s).
+
+      **** Index of standard pseudo elements
+
+      `::after`,`::before`,`::cue`,`::first-letter`,`::first-line`,`::selection`,`::slotted`
+
   + Grid systems
+
   + Semantic markup
+
+    New semantic tags to include in HTML5 such as: `nav`, `header`, `footer`, `article`, and `aside`. We can group the most common and important semantic elements into four categories:
+
+    - Document structure tags
+    - Textual meaning tags
+    - Media type tags
+    - Correlation tags
+
   + Know about CSS preprocessors like SASS or LESS and their benefits.
 
 + Familiar with CSS naming conventions like BEM and OOCSS.
