@@ -57,7 +57,9 @@
 
 + Event loop
 
-  
+  > JavaScript has a concurrency model based on an "event loop".
+  >
+  > Stack, Heap, Queue
 
 + Event bubbling
 
@@ -139,11 +141,25 @@
 
   + Arrow function
 
-  + Deconstruction
+  + Destructuring Assignment
 
   + Spread
 
+  + Default patameters
+
+  + Template Literals
+
+  + Block-Scoped Constructs Let and Const
+
+  + Classes
+
+  + Modules 
+
 + Different way of iterating
+
+  > Array: forEach, map, some, filter, reduce, for...of,
+  >
+  > Object: for... in, Object.getOwnPropertyNames()
 
 ### Design Patterns
 
