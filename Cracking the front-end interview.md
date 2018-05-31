@@ -57,14 +57,92 @@
 
 + Event loop
 
-
+  
 
 + Event bubbling
+
+  > Event bubbling directs an event to its intended target, it works like this:
+  >
+  > - A button is clicked and the event is directed to the button
+  > - If an event handler is set for that object, the event is triggered
+  > - If no event handler is set for that object, the event bubbles up (like a bubble in water) to the objects parent
+  >
+  > The event bubbles up from parent to parent until it is handled, or until it reaches the document object.
+
 + Apply, call and bind
+
+  > Use `.bind()` when you want that function to later be called with a certain context, useful in events. Use `.call()` or `.apply()` when you want to invoke the function immediately, and modify the context.
+  >
+  > Call/apply call the function immediately, whereas `bind` returns a function that, when later executed, will have the correct context set for calling the original function. This way you can maintain context in async callbacks and events.
+
 + Callbacks and promises
+
+  > For JavaScript to know when an asynchronous operation has a result (a result being either returned data or an error that occurred during the operation), it points to a function that will be executed once that result is ready. This function is what we call a “callback function”. Meanwhile, JavaScript continues its normal execution of code. 
+  >
+  > A promise is an object that wraps an asynchronous operation and notifies when it’s done. Instead of providing a callback, a promise has its own methods which you call to tell the promise what will happen when it is successful or when it fails. 
+
 + Variable and functoin hoisting
+
+  >  Variable and function declarations are hoisted to the top
+
 + Currying
+
+  > **currying** is the process of breaking down a function into a series of functions that each take a **single argument**
+  >
+  > It works because of closure.
+
+  ```javascript
+  function _sum3(x, y, z) {
+    return x + y + z;
+  }
+  function sum3(x) {
+    return (y) => {
+      return (z) => {
+        return _sum3(x, y, z);
+      };
+    };
+  }
+  sum3(1)(2)(3) // 6  <--  It works!
+  ```
+
+  [All about currying](https://hackernoon.com/currying-in-js-d9ddc64f162e)
+
 + ES6 features
+
+  + Map, WeakMap, Set, WeakSet (key can only be Object)
+
+  + Promise
+
+    ```javascript
+    const visitWebsite = () => new Promise(function (resolve, reject) {
+      var xml = new XMLHttpRequest();
+      xml.open('GET', 'https://www.google.com', true);
+      xml.onreadystatechange = handler;
+      function handler () {
+        if (this.readyState === XMLHttpRequest.DONE) {
+              console.log(this.status)
+          if (this.status === 200) {
+            
+            resolve(this.responseText);
+          } else {
+            console.log('Error');
+          }
+        }
+      }
+      xml.send();
+    });
+    
+    visitWebsite().then((res) => console.log(res));
+    ```
+
+    
+
+  + Arrow function
+
+  + Deconstruction
+
+  + Spread
+
 + Different way of iterating
 
 ### Design Patterns
