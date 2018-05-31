@@ -3,14 +3,37 @@
 ### HTML and CSS
 
 + Be prepared to be asked to code up a layout based on a mockup
+
+  + Float
+
+    + Clear fix (Avoid parent height collapse)
+
+      ```css
+      .parent {
+          overflow: auto /* hidden, scroll*/;
+      }
+      /*or
+      .parent::after {
+          content: "";
+          clear: both;
+          display: table;
+      }
+      */
+      ```
+
+  + Position
+    - `absolute`: Note that when not combined with top/bottom/left/right, it is same as `relative` except be out of normal flow. When declaring top/bottom/left/right, its position depends on the first parent container whose position is not `static`.
+
 + Basic concepts:
   + CSS animations
   + CSS sprites
   + Pseudo classes
   + Grid systems
   + Semantic markup
-+ Know about CSS preprocessors like SASS or LESS and their benefits.
+  + Know about CSS preprocessors like SASS or LESS and their benefits.
+
 + Familiar with CSS naming conventions like BEM and OOCSS.
+
 + Tips:
   + Use codepen as playground
   + Check out dribble, since there are many simple yet nice designs to recreate.
