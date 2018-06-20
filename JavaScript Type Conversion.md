@@ -116,3 +116,5 @@ To convert the type manually, we use functions.
 | { }              | NaN                 | "[object Object]"   | true                 |
 | null             | **0**               | "null"              | false                |
 | undefined        | NaN                 | "undefined"         | false                |
+
++ 
