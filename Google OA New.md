@@ -1,18 +1,17 @@
 # Google OA New
 
-1. Card game
+#### 1. Card game
 
 Assume you are playing a card game in which each card has a cost and a damage caused to your opponent.
 
 Write a function:
 
+```java
 class Solution 
-
 {
-
-​      public boolean Solution (int total_money, int total_damage , int[] costs, int[] damages){}
-
+      public boolean Solution (int total_money, int total_damage , int[] costs, int[] damages){}
 }
+```
 
 that given:
 
@@ -49,7 +48,7 @@ function cardgame(total_money, total_damage, costs, damages){
 }
 ```
 
-2. Substring
+#### 2. Substring
 
 Write a function that, given a string S and a string T, return 1 if it's possible to convert string S into string T by deleting some(possible zero) characters from string S, and otherwise returns 0
 
