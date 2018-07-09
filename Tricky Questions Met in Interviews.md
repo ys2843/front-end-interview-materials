@@ -82,9 +82,36 @@
     let i = 10;
     ```
 
-    
+  + Other situation
 
-+ String + Number
+    ```javascript
+    var a = 1;
+    var b = 2;
+    
+    if (a === 1) {
+      var a = 11; // the scope is global
+      let b = 22; // the scope is inside the if-block
+    
+      console.log(a);  // 11
+      console.log(b);  // 22
+    } 
+    
+    console.log(a); // 11
+    console.log(b); // 2
+    ```
+
++ Arithmetic operation
+
+  + Addition (+)
+
+    > The addition operator produces the sum of numeric operands or string concatenation.
+
+    ```javascript
+    "1" + 2 + 3 // "123"
+    1 + "2" + 3 // "123"
+    1 + 2 + "3" // "33"
+    undefined + 2 + "1" // "NaN1"
+    ```
 
 + Type conversion
 
