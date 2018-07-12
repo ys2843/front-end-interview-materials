@@ -12,11 +12,7 @@ function timer() {
             minute = Number(minute) + 1 + '';
         } else {
             minute = "00";
-            if (hour < 23) {
-                hour = Number(hour) + 1 + '';
-            } else {
-                hour = "00";
-            }
+            hour = Number(hour) + 1 + '';
         }
     }
     h1.innerText = adjust(hour) + ":" + adjust(minute) + ":" + adjust(sec);
@@ -36,7 +32,7 @@ function stop() {
 
 function start() {
     if (state === 0) {
-        myInterval = setInterval(timer);
+        myInterval = setInterval(timer, 1000);
         state++;
     }
 }

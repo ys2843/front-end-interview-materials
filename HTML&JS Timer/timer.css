@@ -1,3 +1,9 @@
+body {
+    background: url("bg.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+}
 div#container {
     width: 500px;
     margin: 200px auto;
@@ -29,7 +35,7 @@ button:hover {
     background: antiquewhite;
     transform: scale(1.1);
     box-shadow: 0 0 15px #000000;
-    transition: all 200ms ease-in;
+    transition-duration: 200ms;
 }
 
 button:active {
