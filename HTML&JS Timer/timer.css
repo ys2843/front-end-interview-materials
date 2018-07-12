@@ -1,0 +1,37 @@
+div#container {
+    width: 500px;
+    margin: 200px auto;
+    border: powderblue 10px dashed;
+    text-align: center;
+    padding: 10px;
+    background: floralwhite;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+h1#timer {
+    font-size: 3em;
+}
+
+button {
+    width: 25%;
+    padding: 10px 20px 10px 20px;
+    margin: 10px;
+    font-size: 1.5em;
+    border: black solid 2px;
+}
+
+button:focus {
+    background: azure;
+
+}
+
+button:hover {
+    background: antiquewhite;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #000000;
+    transition: all 200ms ease-in;
+}
+
+button:active {
+    background: azure;
+}
