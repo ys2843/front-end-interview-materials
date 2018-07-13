@@ -1,0 +1,34 @@
+#tab-container {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+}
+
+.tablinks {
+    padding: 10px;
+    font-size: 1.5em;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+.active {
+    border: 1px solid gray;
+    border-bottom: none;
+}
+
+.tab-view {
+    display: none;
+    border: 1px solid gray;
+    border-top: none;
+    padding: 10px;
+}
+
+#block {
+    width: 100%;
+    border-bottom: 1px solid gray;
+}
+
+#container {
+    margin: 20% auto;
+    width: 50%;
+}
