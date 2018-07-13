@@ -71,3 +71,51 @@ function Gsubstring (S, T) {
   return 1;
 }
 ```
+
+
+
+# Google JavaScript Phone Interview Question
+
+假设有个 **animalFetcher(‘g’, function(result) { console.log(results) });**  
+
+animalFetcher 第一个parameter可以看成是一个User input，第二个parameter是一个callback function，可以在console.log()里面显示出results, 然后有几个Fetcher function跟这个animalFetcher一样，
+
+求问:  
+
+**fetchAll = combineFetchers([fruitFetcher, animalFetcher, mineralFetcher]);**  
+
+**fetchAll('g', function(results) {console.log(results)})**  
+
+1. 如何在这个fetchAll的function里面，显示出所有fetchers results的合集
+2. 并请讨论，如果有几千个fetchers的话，怎么优化？从前端和后端角度。 
+
+```javascript
+fetchAll = combineFetchers([animalFetcher, fruitFetcher, mineralFetcher]);
+fetchAll(4, function (res) {console.log(res);});
+// Answer
+function combineFetchers (arr) {
+  var list = [];
+  return function (input, func) {
+    arr.forEach(function (ele) {
+      ele(input, function (res) {list.push(res);});
+    });
+    func(list);
+  }
+}
+
+function animalFetcher (userInput, callback) {
+  var result = userInput + 1;
+  callback(result);
+}
+
+function fruitFetcher (userInput, callback) {
+  var result = userInput + 2;
+  callback(result);
+}
+
+function mineralFetcher (userInput, callback) {
+  var result = userInput + 3;
+  callback(result);
+}
+```
+
