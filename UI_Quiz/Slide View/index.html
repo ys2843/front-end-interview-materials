@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slide View</title>
+    <link rel="stylesheet"  href="./index.css">
+    <style>
+        ul li:nth-child(odd) {
+            background-color: lightgoldenrodyellow;
+        }
+        ul {
+            list-style-type: none;
+        }
+        li {
+            height: 50px;
+            text-align: center;
+            padding: 2px;
+        }
+        li:hover {
+            border: 2px dashed lightpink;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="view list-view">
+            <ul class="list">
+                <li class="list-item">Yang Shi</li>
+                <li class="list-item">Jing Wang</li>
+                <li class="list-item">Eric Shi</li>
+                <li class="list-item">Yang Shi</li>
+                <li class="list-item">Jing Wang</li>
+                <li class="list-item">Eric Shi</li>
+                <li class="list-item">Yang Shi</li>
+                <li class="list-item">Jing Wang</li>
+                <li class="list-item">Eric Shi</li>
+            </ul>
+        </div>
+        <div class="view details-view">
+            <h1>Details about <span class="detailInfo"></span></h1>
+            <button class="back-button">back</button>
+        </div>
+    </div>
+    <script type="text/javascript" src="./index.js"></script>
+</body>
+</html>

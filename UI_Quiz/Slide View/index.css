@@ -1,0 +1,33 @@
+.container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.view {
+    width: 100%;
+    will-change: transform;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.list-view {
+    position: relative;
+    transition: width 0.3s ease-in-out;
+}
+
+.details-view {
+    margin: 5px;
+    transform: translateX(333%);
+    width: 30%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.change-view .list-view {
+    width: 70%;
+}
+
+.change-view .details-view {
+    transform: translateX(233%);
+}
