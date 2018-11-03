@@ -112,4 +112,3 @@ Because it always takes longer to identify a variable on the scope chain with de
   In JavaScript, functions are represented as object, which means it has properties just like other objects. And such properties including external and internal properties. One of the internal properties is [[Scope]], which can not be accessed by developer. 
 
   Everytime a function is executed, a corresponding **execution context** is created by using funtion's [[Scope]] property. The values in [[Scope]] are copied to execution context.
-
