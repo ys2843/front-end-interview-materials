@@ -94,14 +94,14 @@ For example,
 
 ### Charpter 2 Data Access
 
-There 4 ways of accessing a data
+There are 4 ways of accessing a data
 
-| Methods        | Description                    |
-| -------------- | ------------------------------ |
-| Literal Value  | Anything that is itself        |
-| Variables      | A location for storing data    |
-| Array items    | A numerically indexed location |
-| Object members | A string indexed location      |
+| Methods        | Description                    | Example                |
+| -------------- | ------------------------------ | ---------------------- |
+| Literal Value  | Anything that is itself        | const s = "abc";       |
+| Variables      | A location for storing data    | let a = 1;             |
+| Array items    | A numerically indexed location | const arr= [1, 2, 3];  |
+| Object members | A string indexed location      | const ob = {count: 3}; |
 
 #### Managing Scope
 
@@ -109,6 +109,6 @@ Because it always takes longer to identify a variable on the scope chain with de
 
 + Scope Chain and Identifier Resolution
 
-  In JavaScript, functions are represented as object, which means it has properties just like other objects. And such properties including external and internal properties. One of the internal properties is [[Scope]], which can not be accessed by developer. 
+  In JavaScript, functions are represented as object, which means it has properties just like other objects. And such properties including external and internal properties. One of the internal properties is [[Scope]], which can not be accessed by developer. [[Scope]] property consists of the data a function can access. The data are in the form of Key-Value pairs stored in [[Scope]] and they are called variable object.
 
-  Everytime a function is executed, a corresponding **execution context** is created by using funtion's [[Scope]] property. The values in [[Scope]] are copied to execution context.
+  Everytime a function is executed, a corresponding **execution context** is created by populating the funtion's [[Scope]] property. The values in [[Scope]] are copied to execution context.
